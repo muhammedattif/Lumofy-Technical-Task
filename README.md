@@ -55,17 +55,16 @@ docker compose exec app python manage.py shell_plus
 ## Features
 
 1. [Section 1: General Coding & Problem Solving](docs/general_coding.md)
+   - Design a database schema for a Learning Management System (LMS)
+   - Users can upload files and access them later.
+   - Files are validated by type and size.
+
+2. [Section 2: API Design & Implementation](docs/api_design.md)
    - Create, update, delete, and retrieve courses.
    - Add and remove lessons from courses.
    - Track student progress for each lesson.
 
-2. [Section 2: API Design & Implementation](docs/api_design.md)
-   - Users can upload files and access them later.
-   - Files are validated by type and size.
-
 3. [Section 3: Code Review & Engineering Mindset](docs/code_review.md)
-   - Manage student enrollments in courses.
-   - Track completion status of lessons.
 
 4. [Section 4: React Integration](docs/react_integration.md)
     - Implement a simple React component to integrate with the courses API

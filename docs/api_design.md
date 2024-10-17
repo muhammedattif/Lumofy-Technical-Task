@@ -1,3 +1,3 @@
 # 1. Django REST API for LMS Management
 
-- [Files Uploads](src/courses)
+- [Django REST Framework API Task](src/courses)

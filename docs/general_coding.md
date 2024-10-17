@@ -91,4 +91,4 @@ WHERE courses.teacher_id = <teacher_id>;
 
 # 2. Python/Django Problem
 
-- [Files Uploads](src/drive)
+- [Files Uploads](/src/drive/)
