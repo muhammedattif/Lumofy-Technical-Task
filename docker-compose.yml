@@ -1,0 +1,40 @@
+services:
+  db:
+    image: postgres:15
+    container_name: lms-database
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./.env
+    ports:
+      - 1234:5432
+
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      target: app-local
+    container_name: lms-app
+    restart: always
+    env_file:
+      - ./.env
+    ports:
+    - '80:80'
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: ./Dockerfile
+      target: nginx-local
+    container_name: lms-nginx
+    restart: always
+    network_mode: 'service:app'
+    depends_on:
+      - app
+
+volumes:
+  postgres_data:

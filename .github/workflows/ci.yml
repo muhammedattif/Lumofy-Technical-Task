@@ -1,0 +1,18 @@
+name: Pylint CI
+
+on:
+  push:
+    branches:
+      - main
+      - 'feature/**'
+      - 'bugfix/**'
+  pull_request:
+    branches:
+      - main
+      - 'feature/**'
+      - 'bugfix/**'
+
+jobs:
+    pylint:
+        name: Pylint Analysis
+        uses: ./.github/workflows/pylint.yml

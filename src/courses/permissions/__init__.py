@@ -1,0 +1,2 @@
+from .teacher_permission import TeacherPermission
+from .student_permission import StudentPermission

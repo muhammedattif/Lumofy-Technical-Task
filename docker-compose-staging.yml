@@ -1,0 +1,30 @@
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      target: app
+    container_name: app
+    restart: always
+    image: # Add Image URL:${COMMIT_HASH:-latest}
+    env_file:
+      - ./.env
+    ports:
+    - '8000:80'
+
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: ./Dockerfile
+      target: nginx
+    container_name: nginx
+    restart: always
+    image: # Add Image URL:${COMMIT_HASH:-latest}
+    network_mode: 'service:app'
+    depends_on:
+      - app
+
+
+volumes:
+  postgres_data:
